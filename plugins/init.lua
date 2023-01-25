@@ -1,6 +1,7 @@
 local overrides = require "custom.plugins.overrides"
 
-return {
+---@type {[PluginName]: PluginConfig}
+local plugins = {
 
   -- ["goolord/alpha-nvim"] = { disable = false } -- enables dashboard
 
@@ -44,3 +45,5 @@ return {
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
+
+return plugins
