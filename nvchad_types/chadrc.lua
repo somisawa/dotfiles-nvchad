@@ -2,7 +2,7 @@
 
 ---@class ChadrcConfig
 ---@field ui? UIConfig
----@field plugins? table<PluginName, PluginConfig>
+---@field plugins? table<PluginName, PluginConfig|false> If false, remove the plugin from NvChad
 ---@field mappings? MappingsConfig
 
 ---@class UIConfig
