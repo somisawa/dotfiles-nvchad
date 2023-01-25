@@ -19,6 +19,36 @@
 
 ---@alias HLTable table<string, Base46HLGroups>
 
+---@class NvCmpConfig
+---@field icons boolean Whether to add colors to icons in nvim-cmp popup menu
+---@field lspkind_text boolean Whether to also have the lsp kind highlighted with the icons as well or not
+---@field style '"default"'|'"flat_light"'|'"flat_dark"'|'"atom"'|'"atom_colored"' nvim-cmp style
+---@field border_color string|Base30Colors Only has effects when the style is `default`
+---@field selected_item_bg '"colored"'|'"simple"'
+
+---@class NvStatusLineConfig
+---@field theme '"default"'|'"vscode"'|'"vscode_colored"'|'"minimal"' statusline theme
+---@field separator_style '"default"'|'"round"'|'"block"' As of now, `round` and `block` only works for minimal theme
+---@field overriden_modules? fun(): table List of modules that you override. Check [UI Plugins](https://nvchad.com/config/nvchad_ui) for more information
+
+---@class NvTabufLineConfig
+---@field enabled boolean whether to enable custom tabufline or not
+---@field lazyload boolean If true, will only load custom tabufline if there's two or more buffers/tabs
+---@field overriden_modules? fun(): table List of modules that you override. Check [UI Plugins](https://nvchad.com/config/nvchad_ui) for more information
+
+---@class NvDashConfig
+---@field load_on_startup boolean If true, load in dashboard when opening nvim
+---@field header string[] Your ascii art
+---@field buttons NvDashButtonConfig[] List of buttons on the dashboard
+
+---@class NvDashButtonConfig
+---@field [1] string Description for the button
+---@field [2] string sequence of keys to press to trigger the keybind
+---@field [3] string|fun() A Vim Command/A Lua function to be triggered when pressing the keybind/pressing enter on the line with the description on the dashboard
+
+---@class NvCheatSheetConfig
+---@field theme '"grid"'|'"simple"' Cheat sheet theme
+
 ---@alias PluginName string
 
 ---@class PluginConfig
