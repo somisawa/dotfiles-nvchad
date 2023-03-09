@@ -3,7 +3,12 @@ local overrides = require "custom.plugins.overrides"
 ---@type {[PluginName]: NvPluginConfig|false}
 local plugins = {
 
-  -- ["goolord/alpha-nvim"] = { disable = false } -- enables dashboard
+  ["goolord/alpha-nvim"] = {
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end,
+    disable = false,
+  },
 
   -- Override plugin definition options
   ["neovim/nvim-lspconfig"] = {
@@ -29,9 +34,6 @@ local plugins = {
   -- Install a plugin
   ["max397574/better-escape.nvim"] = {
     event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
   },
 
   -- code formatting, linting etc
